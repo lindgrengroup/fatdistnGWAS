@@ -18,17 +18,20 @@ Usage: ```./build_grm.sh chr imputed_or_genotyped```
 R script for generating phenotypes from UK Biobank data. Specifically, this script helps standardize and normalize the body mass index and waiste-hip ratio traits, as well as generate the waist-hip ratio adjusted for BMI trait. <br />
 Usage: ```Rscript anthropometricPheno.fat-distn.R```
 
-#### 5. gctaSelect,sh
+#### 5. gctaSelect.sh
 Script that calls the GCTA software (http://cnsgenomics.com/software/gcta/GCTA_UserManual_v1.24.pdf) to run joint conditional analysis (to determine independent signals within a single genomic loci). This script can be used to determine independetly-associated signals in the UK Biobank-only GWAS (i.e., the 'meta' argument set to 0) or from the meta-analysis ('meta' argument set to 1). <br />
 Usage: ```./gctaSelect.sh phenotype sex chromosome significance_level meta```
 
 #### 6. ldscores.sh
-Script for generating LD Scores (https://github.com/bulik/ldsc) from PLINK-formatted data. The GRM can included imputed or genotyped data, contain pruned or unpruned SNPs.
+Script for generating LD Scores (https://github.com/bulik/ldsc) from PLINK-formatted data. The GRM can included imputed or genotyped data, contain pruned or unpruned SNPs. <br />
 Usage: ```./ldscores.sh grm pruned sample_set chr```
 
-#### 6. ldsc-intercept.sh
-Script for estimating the LD Score intercept from GWAS summary-level data.
+#### 7. ldsc-intercept.sh
+Script for estimating the LD Score intercept from GWAS summary-level data. <br />
 Usage: ```./ldsc-intercept.sh phenotype sex ldsc_panel```
 
-
+#### 8. run_metal.sh
+Example script for running meta-analysis in METAL (https://genome.sph.umich.edu/wiki/METAL_Documentation). <br />
+Usage: ```./run_metal.sh metal_params.example.txt``` <br />
+The file metal_params.example.txt is provided as part of this repository.
 
