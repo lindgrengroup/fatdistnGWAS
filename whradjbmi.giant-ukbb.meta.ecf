@@ -1,0 +1,107 @@
+######### Load in the data, rename columns where relevant, merge in reference data (chr, pos, a1, a2) and align alleles across files
+#########
+
+DEFINE --strMissing NA
+       --strSeparator WHITESPACE
+       --acolIn SNP;Allele1;Allele2;Freq1;Effect;StdErr;P.value;Direction;Nmeta;Info
+       --acolInClasses character;character;character;numeric;numeric;numeric;numeric;character;numeric;character
+       --acolNewName SNP;A1;A2;frqA1;beta;se;pval;dir;nmeta;info
+       --pathOut ./
+
+EASYIN --fileIn /path/to/meta-analysis/metal/whradjbmi/combined/fat-distn.giant.ukbb.meta-analysis.whradjbmi.combined.annotated.tbl.gz
+       --fileInShortName whradjbmi.combined
+       --fileInTag whradjbmi.combined
+
+EASYIN --fileIn /path/to/meta-analysis/metal/whradjbmi/females/fat-distn.giant.ukbb.meta-analysis.whradjbmi.females.annotated.tbl.gz
+       --fileInShortName whradjbmi.females
+       --fileInTag whradjbmi.females
+
+EASYIN --fileIn /path/to/meta-analysis/metal/whradjbmi/males/fat-distn.giant.ukbb.meta-analysis.whradjbmi.males.annotated.tbl.gz
+       --fileInShortName whradjbmi.males
+       --fileInTag whradjbmi.males
+
+########
+########
+START EASYX
+
+## Merge together the data
+MERGE --colInMarker SNP
+      --fileRef ./ref.data.chr.pos.giant-ukbb.txt.gz
+      --strMissing NA StrSeparator SPACE
+      --colRefMarker SNP
+      --strRefSuffix .ref
+      --blnWriteNotInRef 0
+      --blnWriteNotInIn 0
+      --strTag REF
+
+MERGEEASYIN --colInMarker SNP --blnMergeAll 0
+
+## align the alleles to keep things easy
+ADJUSTALLELES --colInA1 A1.whradjbmi.males
+	      --colInA2 A2.whradjbmi.males
+	      --colInFreq frqA1.whradjbmi.males
+	      --colInBeta beta.whradjbmi.males
+	      --colRefA1 A1.whradjbmi.females
+	      --colRefA2 A2.whradjbmi.females
+
+## plot the Manhattan plot
+MHPLOT --colMHPlot pval.whradjbmi.combined
+       --colInChr Chr.ref.whradjbmi.combined
+       --colInPos Pos.ref.whradjbmi.combined
+       --astrDefaultColourChr azure3;grey85
+       --numPvalOffset 0.05
+       --blnYAxisBreak 1
+       --numYAxisBreak 30
+       --anumAddPvalLine 5e-8;5e-9
+       --astrAddPvalLineCol grey30;grey50
+       --anumAddPvalLineLty 6;6
+       --strFormat png
+       --fileAnnot ./annotate.whradjbmi.combined.index.snps.gcta.cojo-slct.lst
+       --numAnnotPvalLim 5e-9
+       --numAnnotPosLim 50000
+
+## create a Miami plot
+MIAMIPLOT --colMIAMIPlotUp pval.whradjbmi.females
+	  --colMIAMIPlotDown pval.whradjbmi.males
+	  --colInChr Chr.ref.whradjbmi.combined
+	  --colInPos Pos.ref.whradjbmi.combined
+	  --astrDefaultColourChrUp royalblue1;royalblue3
+	  --astrDefaultColourChrDown coral3;coral1
+	  --numPvalOffset 0.05
+	  --blnYAxisBreak 1
+	  --numYAxisBreak 30
+	  --anumAddPvalLine 5e-8;5e-9
+	  --astrAddPvalLineCol grey30;grey50
+	  --anumAddPvalLineLty 6;6
+	  --strFormat png
+	  --fileAnnot ./annotate.whradjbmi.females.males.index.snps.gcta.cojo-slct.lst
+	  --numAnnotPvalLim 5e-9
+	  --numAnnotPosLim 50000
+
+## QQ plot, stratified by sex
+QQPLOT  --acolQQPlot pval.whradjbmi.females;pval.whradjbmi.males
+	--astrColour royalblue1;coral1
+	--anumSymbol 0;1
+	--anumCex 1.5;1.5
+	--numPvalOffset 0.05
+
+## QQ plot, combined analysis
+QQPLOT  --acolQQPlot pval.whradjbmi.combined
+        --astrColour azure3
+	--anumSymbol 0
+	--anumCex 1.5
+	--numPvalOffset 0.05
+
+## run the test for sexual dimorphism
+CALCPDIFF --acolBETAs beta.whradjbmi.males;beta.whradjbmi.females
+	  --acolSEs se.whradjbmi.males;se.whradjbmi.females
+	  --colOutPdiff psexdiff
+	  --blnCovCorrection 0
+
+## extract a list of important SNPs
+EXTRACTSNPS --colInMarker SNP
+	    --fileRef ./whradjbmi.all-signal-snps.toExtract.lst
+	    --colRefMarker SNP
+	    --strTag indexSnps
+
+STOP EASYX
