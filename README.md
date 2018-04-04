@@ -10,7 +10,7 @@ Usage: ```./run.bolt.ukbb-anthropometric.sh phenotype ldsc_panel grm grm_snp_sub
 Script for estimating heritability of a trait using UK Biobank data and the restricted maximum likelihood (REML) method implented in BOLT-LMM (i.e., BOLT-REML)  <br />
 Usaage: ```./run.bolt-reml.ukbb-anthropometric.sh phenotype ldsc_panel grm grm_snp_subset sex```
 
-#### 3. build_grm.sh
+#### 3. build_grm.sh
 Script for generating data to use as the genetic relationship matrix (GRM) when running BOLT-LMM. The script contains steps to generate a GRM from either genotyped or imputed data  <br />
 Usage: ```./build_grm.sh chr imputed_or_genotyped```
 
