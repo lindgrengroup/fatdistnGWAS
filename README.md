@@ -13,7 +13,7 @@ An example parameters file for running meta-analysis in METAL (https://genome.sp
 #### 3. Supplementary Table 1: SuppTable1/[whr or whradjbmi].giant-ukbb.meta.1.merged.[index or secondary]Snps.combined.parsed.txt
 Files containing summary-level data for index SNPs from analysis of either WHR or WHRadjBMI, and for either index or secondary SNPs. The format of these files is provided in the supplementary information. Columns are: <br />
 
-   _SNP, Chr, Pos, A1, A2, frqA1.combined, beta.combined, se.combined, pval.combined, dir.combined, nmeta.combined, info.combined, [columns w/info for analysis in males and females], psexdiff_ . 
+   _SNP, Chr, Pos, A1, A2, frqA1.combined, beta.combined, se.combined, pval.combined, dir.combined, nmeta.combined, info.combined, [columns w/info for analysis in males and females], psexdiff_  
    
 #### 4. Supplementary Table 2: SuppTable2/collider.bias.[sex].index.results.txt
 Files containing summary-level data for index SNPs from the WHRadjBMI analyses (combined, females, males) and the results for these SNPs from analysis of WHR and BMI as well. These results were used to test for collider bias. Columns are: <br />
