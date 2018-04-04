@@ -10,7 +10,7 @@ An 'ecf' file, the expected format to run Easy Strata (http://homepages.uni-rege
 #### 2. metal_params.example.txt
 An example parameters file for running meta-analysis in METAL (https://genome.sph.umich.edu/wiki/METAL_Documentation)
 
-#### 3. Supplementary Table 1: [whr or whradjbmi].giant-ukbb.meta.1.merged.[index or secondary]Snps.combined.parsed.txt
+#### 3. Supplementary Table 1: SuppTable1/[whr or whradjbmi].giant-ukbb.meta.1.merged.[index or secondary]Snps.combined.parsed.txt
 Files containing summary-level data for index SNPs from analysis of either WHR or WHRadjBMI, and for either index or secondary SNPs. The format of these files is provided in the supplementary information. Columns are: <br />
 
    _SNP, Chr, Pos, A1, A2, frqA1.combined, beta.combined, se.combined, pval.combined, dir.combined, nmeta.combined, info.combined, [columns w/info for analysis in males and females], psexdiff_ . 
