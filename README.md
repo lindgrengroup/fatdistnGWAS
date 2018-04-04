@@ -42,3 +42,7 @@ Usage: ```./plinkClump.sh phenotype sex window```
 #### 10. parse_clumps.py
 A script to identify the genomic windows that result from the Plink clumping, and then identifying overlapping (and unique) windows to define genomic loci. 
 
+#### 11. easyStrata.R
+A script that will run the software Easy Strata, which does a number of things including generating Manhattan and Miami plots, and running the sexual dimorphism test.  <br />
+Usage: ```Rscript easyStrata.R input.ecf``` <br />
+The 'ecf' file is the expected input for Easy Strata, and the file whradjbmi.giant-ukbb.meta.ecf is included in this repository as an example.
