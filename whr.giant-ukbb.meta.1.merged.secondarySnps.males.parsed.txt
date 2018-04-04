@@ -1,0 +1,4 @@
+SNP Chr.ref.males Pos.ref.males A1.combined A2.combined frqA1.combined beta.combined se.combined pval.combined dir.combined nmeta.combined info.combined frqA1.females beta.females se.females pval.females dir.females nmeta.females info.females frqA1.males beta.males se.males pval.males dir.males nmeta.males info.males psexdiff
+rs11964803:G:A 6 50836774 A G 0.494 0.0037 0.0017 0.03105 ++ 697363 0.998556 0.4954 0.0019 0.0023 0.3968 ++ 380969 0.998556 0.4964 0.0075 0.0025 0.002763 ++ 316578 0.998556 0.0949875457794414
+rs663129:G:A 18 57838401 A G 0.2485 0.0258 0.002 4.431e-38 ++ 695890 0.999564 0.2484 0.0294 0.0027 8.092e-28 ++ 380384 0.999564 0.25 0.0217 0.0029 1.675e-13 ++ 315690 0.999564 0.0490353406596187
+rs750332:C:T 6 31607050 T C 0.8173 0.0186 0.0025 1.776e-13 +? 485486 0.999738 0.8175 0.019 0.0034 2.805e-08 +? 263148 0.999738 0.8171 0.0191 0.0038 4.31e-07 +? 222338 0.999738 0.984152840124679
