@@ -35,3 +35,10 @@ Example script for running meta-analysis in METAL (https://genome.sph.umich.edu/
 Usage: ```./run_metal.sh metal_params.example.txt``` <br />
 The file metal_params.example.txt is provided as part of this repository.
 
+#### 9. plinkClump.sh
+Script for clumping SNPs into loci using the Plink clumping algorithm.  <br />
+Usage: ```./plinkClump.sh phenotype sex window```
+
+#### 10. parse_clumps.py
+A script to identify the genomic windows that result from the Plink clumping, and then identifying overlapping (and unique) windows to define genomic loci. 
+
