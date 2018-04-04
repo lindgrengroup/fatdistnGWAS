@@ -1,0 +1,39 @@
+# This script executes inverse variance weighted fixed effects meta-analysis between GIANT and UK Biobank
+# The results for the three phenotypes (whr, whr, whradjwhr) and split by sex (combined, females, males) are stored in the following files:
+# ./alignSNPs/ukbb/ukbb.2017.[pheno].[sex].eur.dbsnp151.ukbb.txt and ./alignSNPs/giant/giant.2015.[pheno].[sex].eur.dbsnp151.ukbb.txt
+# this is an example of one metal parameters file; there is one needed for each phenotype-sex combination
+
+# Load the input files (one from GIANT and one from UK Biobank)
+
+# Uncomment the next line if you want to apply genomic control
+# GENOMICCONTROL ON
+
+# other useful parameters
+COLUMNCOUNTING LENIENT
+AVERAGEFREQ ON
+MINMAXFREQ ON
+
+# run inverse variance weighted fixed effects meta-analysis
+SCHEME STDERR
+
+# === DESCRIBE AND PROCESS THE FIRST INPUT FILE ===
+
+SEPARATOR WHITESPACE
+
+MARKER SNP
+ALLELE A1 A2
+EFFECT beta
+STDERR se
+PVALUE p
+WEIGHT n
+FREQ frqA1
+
+# === PROCESS THE FIRST INPUT FILE ===
+PROCESS ./alignSNPs/ukbb/ukbb.2017.whr.combined.eur.dbsnp151.ukbb.txt
+
+# === THE SECOND INPUT FILE HAS THE SAME FORMAT, PROCESS ===
+PROCESS ./alignSNPs/giant/giant.2015.whr.combined.eur.dbsnp151.ukbb.txt
+
+ANALYZE
+
+QUIT
