@@ -1,6 +1,21 @@
 # Meta-analysis of fat distribution phenotypes in UK Biobank and GIANT
 Included in this repository is code and data related to the manuscript 'Meta-analysis of genome-wide association studies for body fat distribution in 694,649 individuals of European ancestry' (available on bioRxiv here: XXX)
 
+## Part I: Data
+Data (including supplementary tables or links to data) produced for the manuscript 'Meta-analysis of genome-wide association studies for body fat distribution in 694,649 individuals of European ancestry.' 
+
+#### 1. whradjbmi.giant-ukbb.meta.ecf
+An 'ecf' file, the expected format to run Easy Strata (http://homepages.uni-regensburg.de/~wit59712/easystrata/EasyStrata_8.6_Commands_140615.pdf). 
+
+#### 2. metal_params.example.txt
+An example parameters file for running meta-analysis in METAL (https://genome.sph.umich.edu/wiki/METAL_Documentation)
+
+#### 3. Supplementary Table 1: [whr or whradjbmi].giant-ukbb.meta.1.merged.[index or secondary]Snps.combined.parsed.txt
+Files containing summary-level data for index SNPs from analysis of either WHR or WHRadjBMI, and for either index or secondary SNPs. The format of these files is provided in the supplementary information. Columns are: <br />
+   _SNP, Chr, Pos, A1, A2, frqA1.combined, beta.combined, se.combined, pval.combined, dir.combined, nmeta.combined, info.combined, [columns repeating information for analysis in males and analysis in females], psexdiff_
+
+## Part II: Scripts
+Relevant code for analyses included in 'Meta-analysis of genome-wide association studies for body fat distribution in 694,649 individuals of European ancestry'
 
 #### 1. run.bolt.ukbb-anthropometric.sh 
 Script for running a genome-wide association study on UK Biobank data, using BOLT-LMM  <br />
@@ -46,3 +61,4 @@ A script to identify the genomic windows that result from the Plink clumping, an
 A script that will run the software Easy Strata, which does a number of things including generating Manhattan and Miami plots, and running the sexual dimorphism test.  <br />
 Usage: ```Rscript easyStrata.R input.ecf``` <br />
 The 'ecf' file is the expected input for Easy Strata, and the file whradjbmi.giant-ukbb.meta.ecf is included in this repository as an example.
+
