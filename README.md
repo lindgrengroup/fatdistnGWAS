@@ -21,3 +21,14 @@ Usage: ```Rscript anthropometricPheno.fat-distn.R```
 #### 5. gctaSelect,sh
 Script that calls the GCTA software (http://cnsgenomics.com/software/gcta/GCTA_UserManual_v1.24.pdf) to run joint conditional analysis (to determine independent signals within a single genomic loci). This script can be used to determine independetly-associated signals in the UK Biobank-only GWAS (i.e., the 'meta' argument set to 0) or from the meta-analysis ('meta' argument set to 1). <br />
 Usage: ```./gctaSelect.sh phenotype sex chromosome significance_level meta```
+
+#### 6. ldscores.sh
+Script for generating LD Scores (https://github.com/bulik/ldsc) from PLINK-formatted data. The GRM can included imputed or genotyped data, contain pruned or unpruned SNPs.
+Usage: ```./ldscores.sh grm pruned sample_set chr```
+
+#### 6. ldsc-intercept.sh
+Script for estimating the LD Score intercept from GWAS summary-level data.
+Usage: ```./ldsc-intercept.sh phenotype sex ldsc_panel```
+
+
+
