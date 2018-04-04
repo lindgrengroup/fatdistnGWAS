@@ -14,6 +14,11 @@ An example parameters file for running meta-analysis in METAL (https://genome.sp
 Files containing summary-level data for index SNPs from analysis of either WHR or WHRadjBMI, and for either index or secondary SNPs. The format of these files is provided in the supplementary information. Columns are: <br />
 
    _SNP, Chr, Pos, A1, A2, frqA1.combined, beta.combined, se.combined, pval.combined, dir.combined, nmeta.combined, info.combined, [columns w/info for analysis in males and females], psexdiff_ . 
+   
+#### 4. Supplementary Table 2: SuppTable2/collider.bias.[sex].index.results.txt
+Files containing summary-level data for index SNPs from the WHRadjBMI analyses (combined, females, males) and the results for these SNPs from analysis of WHR and BMI as well. These results were used to test for collider bias. Columns are: <br />
+
+   _SNP, frqA1.whradjbmi, beta.whradjbmi, se.whradjbmi, pval.whradjbmi, frqA1.bmi, beta.bmi, se.bmi, pval.bmi, frqA1.whr, beta.whr, se.whr, pval.whr_    
 
 ## Part II: Scripts
 Relevant code for analyses included in 'Meta-analysis of genome-wide association studies for body fat distribution in 694,649 individuals of European ancestry'
