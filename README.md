@@ -5,7 +5,7 @@ Included in this repository is code and data related to the manuscript 'Meta-ana
 Data (including supplementary tables or links to data) produced for the manuscript 'Meta-analysis of genome-wide association studies for body fat distribution in 694,649 individuals of European ancestry.' 
 
 #### 1. whradjbmi.giant-ukbb.meta.ecf
-An 'ecf' file, the expected format to run Easy Strata (http://homepages.uni-regensburg.de/~wit59712/easystrata/EasyStrata_8.6_Commands_140615.pdf). 
+An 'ecf' file, the expected format to run Easy Strata (http://homepages.uni-regensburg.de/~wit59712/easystrata/EasyStrata_8.6_Commands_140615.pdf). Can be used with Easy Strata and the summary-level data to regenerate the Manhattan plots, Miami plots, and QQ plots shown in the Supplementary Information.
 
 #### 2. metal_params.example.txt
 An example parameters file for running meta-analysis in METAL (https://genome.sph.umich.edu/wiki/METAL_Documentation)
