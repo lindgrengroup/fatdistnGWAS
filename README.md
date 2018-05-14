@@ -20,8 +20,8 @@ Files containing summary-level data for index SNPs from the WHRadjBMI analyses (
 
    _SNP, frqA1.whradjbmi, beta.whradjbmi, se.whradjbmi, pval.whradjbmi, frqA1.bmi, beta.bmi, se.bmi, pval.bmi, frqA1.whr, beta.whr, se.whr, pval.whr_    
 
-#### 5. Supplementary Tables 4, 8 and 9
-Files containing summary-level data from WHRadjBMI and comparing to the EXTEND dataset (a set of independent samples; SuppTable4) and examining the effect of WHRadjBMI-associated SNPs on body fat percentage (SuppTable8 and SuppTable9).
+#### 5. Supplementary Tables 4, 7 and 8
+Files containing summary-level data from WHRadjBMI and comparing to the EXTEND dataset (a set of independent samples; SuppTable4) and examining the effect of WHRadjBMI-associated SNPs on body fat percentage (SuppTable7 and SuppTable8).
 
 ## Part II: Scripts
 Relevant code for analyses included in 'Meta-analysis of genome-wide association studies for body fat distribution in 694,649 individuals of European ancestry'
