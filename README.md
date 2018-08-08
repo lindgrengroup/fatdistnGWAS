@@ -1,5 +1,5 @@
 # Meta-analysis of fat distribution phenotypes in UK Biobank and GIANT
-Included in this repository is code and data related to the manuscript 'Meta-analysis of genome-wide association studies for body fat distribution in 694,649 individuals of European ancestry' (available on bioRxiv here: XXX)
+Included in this repository is code and data related to the manuscript 'Meta-analysis of genome-wide association studies for body fat distribution in 694,649 individuals of European ancestry' (available on bioRxiv here: https://www.biorxiv.org/content/early/2018/07/27/304030)
 
 ## Part I: Data
 Data (including supplementary tables or links to data) produced for the manuscript 'Meta-analysis of genome-wide association studies for body fat distribution in 694,649 individuals of European ancestry.' 
